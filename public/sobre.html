@@ -1,0 +1,196 @@
+<style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,600&display=swap');
+    @import url('https://fonts.googleapis.com/css/family=Montserrat600|Open+Sans:600&display=swap%27');
+
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        font-family: 'Poppins', sans-serif;
+        background-image: linear-gradient(to right, rgb(3, 50, 94), dodgerblue);
+        height: 1100px;
+    }
+.menu-topo{
+        width: 100%;
+        height: 50px;
+        background-color: dodgerblue;
+        position: absolute;
+
+    }
+
+    .menu-a{
+        text-decoration: none;
+        font-size: 23px;
+        color: white;
+        width: 15%;
+        float: left;
+        text-align: center;
+        margin-top: 7px;
+    }
+
+    .menu-a:hover{
+        background-color: rgb(23, 107, 190);
+        height: 43px;
+        margin-top: 0;
+        padding-top: 7px;
+
+    }
+
+    #ponto{
+        margin-left: 20%;
+    }
+
+    .sidebar{
+        position: fixed;
+        width: 300px;
+        left: -300px;
+        height: 100%;
+        background-color: dodgerblue;
+        transition: all .5s ease;
+    }
+
+    .sidebar header{
+        margin-top: 100px;
+        font-size: 28px;
+        color: white;
+        line-height: 70px;
+        text-align: center;
+        background-color: dodgerblue;
+        user-select: none;
+        font-family: 'Montserrat';
+    }
+
+    .sidebar a{
+        display: block;
+        height: 65px;
+        width: 100%;
+        color: white;
+        line-height: 6;
+        padding-left: 30px;
+        box-sizing: border-box;
+        transition: all .5x ease;
+        text-decoration: none;
+    }
+
+    a.active,a:hover{
+        color: dodgerblue;
+        background-color: white;
+    }
+
+    .sidebar a i{
+        font-size: 23px;
+        margin-right: 16px;
+    }
+    .sidebara span{
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    #check{
+        display: none;
+    }
+
+    label #btn, label #cancel{
+        position: absolute;
+        cursor: pointer;
+        color: white;
+        border-radius: 5px;
+        border: 2px solid white;
+        margin: 15px 30px;
+        background-color: dodgerblue;
+        height: 45px;
+        width: 45px;
+        text-align: center;
+        line-height: 45px;
+        transition: all.5s ease;
+    }
+
+    label #calcel{
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    #check:checked~.sidebar{
+        left: 0;
+    }
+
+    #check:checked~ label #btn{
+        margin-left: 245px;
+        opacity: 0;
+        visibility: hidden;
+    } 
+    
+    .topo{
+        width: 100%;
+        height: 80px;
+        background-color: dodgerblue;
+    }
+
+    .cadastrar{
+        width: 250px;
+        height: 25px;
+        background-color: white;
+        border-radius: 20px;
+        margin-right: 100px;
+        float: right;
+        margin-top: 30px;
+        text-align: center;
+        transition: .3s;
+    }
+    .cadastrar i{
+        text-align: center;
+        padding-top: 80px;
+    }
+
+    .cadastrar:hover{
+        color: white;
+        background-color: dodgerblue;
+        transform: .3s;
+        border:2px solid white;
+    
+    }
+
+</style>
+
+<script src="https://kit.fontawesome.com/a076d05399.js"></script> 
+
+    <div class="menu">
+        <input type="checkbox" id="check">
+        <label for="check">
+            <i class="fas fa-bars" id="btn"></i>
+            <i class="fas fa-bars" id="cancel"></i>
+        </label>
+
+        <div class="sidebar">
+            <header></header>
+            <a href="PontoTuristico.html">
+                <i class="fas fa-link"></i>
+                <span>Pontos Turísticos</span>
+            </a>
+
+            <a href="cidade.html">
+                <i class="fas fa-link"></i>
+                <span>Cidades</span>
+            </a>
+
+            <a href="estado.html">
+                <i class="fas fa-link"></i>
+                <span>Estados</span>
+            </a>
+
+            <a href="categoria.html">
+                <i class="fas fa-sliders-h"></i>
+                <span>Cadastrar Categoria</span>
+            </a>
+
+
+            
+            <a href="">
+                <i class="fas fa-envelope"></i>
+                <span>Contato / Sobre</span>
+            </a>
+        </div>
+    </div>

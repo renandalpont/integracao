@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,600&display=swap');
+        @import url('https://fonts.googleapis.com/css/family=Montserrat600|Open+Sans:600&display=swap%27');
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-family: 'Poppins', sans-serif;
+            background-image: linear-gradient(to right, rgb(3, 50, 94), dodgerblue);
+            height: 1100px;
+        }
+        .box{
+            position: relative;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.473);
+            padding: 15px;
+            border-radius: 15px;
+            width: 500px;
+            color: white;
+
+        }
+
+        fieldset{
+            border: 3px solid dodgerblue;
+        }
+        legend{
+            border: 1px solid dodgerblue;
+            padding: 5px,5px,5px,5px;
+            text-align: center;
+            background-color: dodgerblue;
+            border-radius: 8px;           
+        }
+
+        .inputBox{
+            position: relative;
+        }
+
+        .inputUser{
+            background: none;
+            border: none;
+            border-bottom: 1px solid white;
+            outline: none;
+            color: white;
+            font-size: 15px;
+            width: 100%;
+            letter-spacing: 2px;
+        }
+
+        .laberInput{
+            pointer-events: none;
+            transition: .5s;
+            margin-left: 30px;
+        }
+        
+        #entrada{
+            margin-left: 30px;
+        }
+        #data_nascimento{
+            border: none;
+            padding: 8px;
+            border-radius: 10px;
+            outline: none;
+            font-size: 15px;
+        }
+        #submit{
+            background-image: linear-gradient(to right, rgb(5, 51, 95), dodgerblue);
+            width: 50%;  
+            border: none;
+            padding: 15px;
+            color: white;
+            cursor: pointer;
+            font-size: 15px;
+            border-radius: 10px;
+            margin-left: 25%;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+
+        .subtitulo{
+            background-color: dodgerblue;
+            width: 100%;
+            text-align: center;
+            margin-top: 35px;
+            font-weight: 600;
+            color: white;
+        }
+        b{
+            margin-left: 25px;
+            margin-right: 25px;
+            color: white;
+        }
+
+        @media(max-width: 660px){
+            .box{
+                width:75%;
+            }
+        }
+
+        .menu-topo{
+            width: 100%;
+            height: 50px;
+            background-color: dodgerblue;
+            position: absolute;
+
+        }
+
+        .menu-a{
+            text-decoration: none;
+            font-size: 23px;
+            color: white;
+            width: 15%;
+            float: left;
+            text-align: center;
+            margin-top: 7px;
+        }
+
+        .menu-a:hover{
+            background-color: rgb(23, 107, 190);
+            height: 43px;
+            margin-top: 0;
+            padding-top: 7px;
+
+        }
+
+        #ponto{
+            margin-left: 20%;
+        }
+
+        .sidebar{
+            position: fixed;
+            width: 300px;
+            left: -300px;
+            height: 100%;
+            background-color: dodgerblue;
+            transition: all .5s ease;
+        }
+
+        .sidebar header{
+            margin-top: 100px;
+            font-size: 28px;
+            color: white;
+            line-height: 70px;
+            text-align: center;
+            background-color: dodgerblue;
+            user-select: none;
+            font-family: 'Montserrat';
+        }
+
+        .sidebar a{
+            display: block;
+            height: 65px;
+            width: 100%;
+            color: white;
+            line-height: 6;
+            padding-left: 30px;
+            box-sizing: border-box;
+            transition: all .5x ease;
+            text-decoration: none;
+        }
+
+        a.active,a:hover{
+            color: dodgerblue;
+            background-color: white;
+        }
+
+        .sidebar a i{
+            font-size: 23px;
+            margin-right: 16px;
+        }
+        .sidebara span{
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        #check{
+            display: none;
+        }
+
+        label #btn, label #cancel{
+            position: absolute;
+            cursor: pointer;
+            color: white;
+            border-radius: 5px;
+            border: 1px solid #262626;
+            margin: 15px 30px;
+            background-color: dodgerblue;
+            height: 45px;
+            width: 45px;
+            text-align: center;
+            line-height: 45px;
+            transition: all.5s ease;
+        }
+
+        label #calcel{
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        #check:checked~.sidebar{
+            left: 0;
+        }
+
+        #check:checked~ label #btn{
+            margin-left: 245px;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+    
+
+
+
+
+    </style>
+</head>
+<body>
+
+     <!--   <div class="menu-topo">
+
+            <a href="teste.html" class="menu-a" id="ponto"> Cadastrar Ponto turístico</a>
+            <a href="#" class="menu-a"> Cadastrar Cidade</a>
+            <a href="#" class="menu-a"> Cadastrar Estado</a>
+            <a href="#" class="menu-a"> Cadastrar Categoria</a>
+        </div>
+
+    -->
+
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script> 
+
+        <div class="menu">
+            <input type="checkbox" id="check">
+            <label for="check">
+                <i class="fas fa-bars" id="btn"></i>
+                <i class="fas fa-bars" id="cancel"></i>
+            </label>
+
+            <div class="sidebar">
+                <header></header>
+                <a href="PontoTuristico.html">
+                    <i class="fas fa-link"></i>
+                    <span>Pontos Turísticos</span>
+                </a>
+
+                <a href="cidade.html">
+                    <i class="fas fa-link"></i>
+                    <span>Cidades</span>
+                </a>
+
+                <a href="estado.html">
+                    <i class="fas fa-link"></i>
+                    <span>Estados</span>
+                </a>
+
+                <a href="categoria.html">
+                    <i class="fas fa-sliders-h"></i>
+                    <span>Cadastrar Categoria</span>
+                </a>
+
+
+                
+                <a href="sobre.html">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contato / Sobre</span>
+                </a>
+            </div>
+        </div>
+        <div class="box">
+            <form action="" method="post">
+
+
+                <fieldset>
+                    <legend><b>Cadastro de Cidades</b></legend>
+                    <br>
+                    <p class="subtitulo"> Cidade</p>
+                    <br>
+                    <div class="inputbox">
+                        <input type="text" name="nome" id="nome" class="inputUser" >
+                        <label for="nome" class="laberInput">Nome da cidade</label>
+                    </div>
+                    <br><br>
+                    
+
+                    <input type="submit" name="submit" id="submit">
+                    <br><br>
+                </fieldset>
+            </form>
+        </div>
+    
+</body>
+</html>
